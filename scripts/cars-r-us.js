@@ -2,7 +2,7 @@ import { PaintColors } from "./paint-colors.js";
 import { Technologies } from "./technologies.js";
 import { Wheels } from "./wheels.js";
 import { Interiors } from "./interiors.js";
-import { addCustomOrder } from "./database.js";
+// import { addCustomOrder } from "./database.js";
 
 document.addEventListener("click", (event) => {
   const clickedItem = event.target;
@@ -13,7 +13,7 @@ document.addEventListener("click", (event) => {
 
 export const CarsRUs = () => {
   return `
-  <h1>Cars R Us</h1>
+        <h1>Cars R Us</h1>
 
         <article class="choices">
             <section class="choices__paintColors options">
@@ -39,8 +39,9 @@ export const CarsRUs = () => {
         </article>
 
         <article class="customOrders">
-            <h2>Custom Jewelry Orders</h2>
-            ${Orders()}
+            <h2>Custom Car Orders</h2>
+            
         </article>
   `;
 };
+// ${Orders()}
