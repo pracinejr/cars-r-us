@@ -29,7 +29,8 @@ const database = {
       paintColorId: 3,
       interiorId: 2,
       technologyId: 3,
-      wheelsId: 161465959849,
+      wheelId: 4,
+      timestamp: 161465959849,
     },
   ],
   orderBuilder: {},
@@ -52,18 +53,28 @@ export const getOrders = () => {
   return database.customOrders.map((customOrder) => ({ ...customOrder }));
 };
 
-export const setPaintColor = (id) => {
-  database.orderBuilder.paintColorId = id;
+export const setPaintColor = (paintColorId) => {
+  database.orderBuilder.paintColorId = paintColorId;
 };
 
-export const setInterior = (id) => {
-  database.orderBuilder.interiorId = id;
+export const setInterior = (interiorId) => {
+  database.orderBuilder.interiorId = interiorId;
 };
 
-export const setTechnology = (id) => {
-  database.orderBuilder.technologyId = id;
+export const setTechnology = (technologyId) => {
+  database.orderBuilder.technologyId = technologyId;
 };
 
-export const setWheel = (id) => {
-  database.orderBuilder.wheelId = id;
+export const setWheel = (wheelId) => {
+  database.orderBuilder.wheelId = wheelId;
+};
+
+export const addCustomOrder = () => {
+  const newOrder = { ...database.orderBuilder };
+  const lastIndex = database.customOrders.length - 1;
+  newOrder.id = database.customOrders[lastIndex].id + 1;
+  newOrder.timestamp = Date.now();
+  database.customOrders.push(newOrder);
+  database.orderBuilder = {};
+  document.dispatchEvent(new CustomEvent("stateChanged"));
 };

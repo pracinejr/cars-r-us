@@ -4,7 +4,7 @@ const interiors = getInteriors();
 
 document.addEventListener("click", (event) => {
   if (event.target.name === "interior") {
-    window.alert(`User chose interior ${event.target.value}`);
+    setInterior(parseInt(event.target.value));
   }
 });
 

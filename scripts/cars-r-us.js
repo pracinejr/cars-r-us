@@ -2,7 +2,8 @@ import { PaintColors } from "./paint-colors.js";
 import { Technologies } from "./technologies.js";
 import { Wheels } from "./wheels.js";
 import { Interiors } from "./interiors.js";
-// import { addCustomOrder } from "./database.js";
+import { Orders } from "./UsersChoice.js";
+import { addCustomOrder } from "./database.js";
 
 document.addEventListener("click", (event) => {
   const clickedItem = event.target;
@@ -40,8 +41,7 @@ export const CarsRUs = () => {
 
         <article class="customOrders">
             <h2>Custom Car Orders</h2>
-            
+            ${Orders()}
         </article>
   `;
 };
-// ${Orders()}

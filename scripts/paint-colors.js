@@ -4,7 +4,7 @@ const paintColors = getPaintColors();
 
 document.addEventListener("click", (event) => {
   if (event.target.name === "paintColor") {
-    window.alert(`User chose paint color ${event.target.value}`);
+    setPaintColor(parseInt(event.target.value));
   }
 });
 
