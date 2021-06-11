@@ -4,7 +4,7 @@ const wheels = getWheels();
 
 document.addEventListener("click", (event) => {
   if (event.target.name === "wheel") {
-    window.alert(`User chose wheels ${event.target.value}`);
+    setWheel(parseInt(event.target.value));
   }
 });
 

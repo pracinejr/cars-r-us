@@ -4,7 +4,7 @@ const technologies = getTechnologies();
 
 document.addEventListener("click", (event) => {
   if (event.target.name === "technology") {
-    window.alert(`User chose technology ${event.target.value}`);
+    setTechnology(parseInt(event.target.value));
   }
 });
 
